@@ -19,10 +19,10 @@ class Pizza:
        if not self.baked:
            self.baked = True
            return f"Пицца {self.name} - готова!"
-       return f"Пицца {self.name} - e;t "
+       return f"Пицца {self.name} - уже была приготовлена! "
 
    def add_topping(self, topping):
-       self.toppings.appened(topping)
+       self.toppings.append(topping)
        return f"Добавлена начинка {topping}!"
 
    def info(self):
@@ -30,7 +30,7 @@ class Pizza:
        return f"Пицца '{self.name}', размер {self.size} см, начинки: {', '.join(self.toppings)}. Статус: {status}."
 
 
-# Создаём несколько котов и проверяем
+
 pizza1 = Pizza("Маргарита", 30, ["сыр", "томаты"])
 pizza2 = Pizza("Пепперони", 35, ["сыр", "пепперони"])
 pizza3 = Pizza("Гавайская", 25, ["сыр", "ананас", "курица"])
