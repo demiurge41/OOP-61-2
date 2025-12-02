@@ -1,0 +1,18 @@
+команды для регистрации ваших данных
+
+1) git config --global user.name "your_username" demiurge41
+2) git config --global user.email "your_mailname@gmail.com"
+после написание больше они не нужны (1 B 2)
+
+команды только для одного проекта
+
+1) git init        |   инициализация Гита
+2) git remote add origin link_to_repository    |ДОБАЛЕНИЕ РЕПОЗИТОРИЯ
+    прим ( git remote add origin https://github.com/demiurge41/OOP-60-2.git   )
+
+git status  | статус репозитория
+
+3) git add .   |   добавление файлов в буфер обмена
+4) git commit -m "message" |сохранение всего из буфера обмена
+
+5) git push origin master  | отправка всех сохранений в репозитории (на сайт GitHub)
