@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 class Hero:
     def __init__(self, name, lvl, hp):
         self.name = name
@@ -71,17 +72,14 @@ print(warrior.action())
 print(acc1)
 print(acc2)
 
-# --- Классовые и статические методы ---
+
 print(f"Банк: {acc1.get_bank_name()}")
 print(f"Бонус за уровень: {acc1.bonus_for_level()} Cом")
 
-# --- Магические методы: __add__ ---
 print("\n=== Проверка __add__ ===")
-
 print("Сумма счетов двух магов:", acc1 + acc2)
 print("Сумма мага и воина:", acc1 + acc3)
 
-# --- Магический метод: __eq__ ---
 print("\n=== Проверка __eq__ ===")
 
 print("Mage1 == Mage2 ?", acc1 == acc2) # True — одинаковое имя и уровень
@@ -90,6 +88,32 @@ print("Mage1 == Warrior ?", acc1 == acc3)  # False
 
 
 
-class SmsService:
+class SmsService(ABC):
+    @abstractmethod
+    def send_otp(self, phone):
+        pass
 
 
+class KGSms(SmsService):
+    def send_otp(self, phone):
+        return f"<text>Код: 1234</text><phone>{phone}</phone>"
+
+
+class RUSms(SmsService):
+    def send_otp(self, phone):
+        return {"text": "Код: 1234", "phone": phone}
+
+print("Банк:", acc1.get_bank_name())
+print("Бонус за уровень:", acc1.bonus_for_level(), "SOM")
+
+print("\n=== Проверка _add_ ===")
+print("Сумма счетов двух магов:", acc1 + acc2)
+
+print("Сумма мага и воина:", acc1 + acc3)
+
+print("\n=== Проверка _eq_ ===")
+print("Mage1 == Mage2 ?", acc1 == acc2)
+print("Mage1 == Warrior ?", acc1 == acc3)
+
+sms = KGSms()
+print("\n", sms.send_otp("+996777123456"))
