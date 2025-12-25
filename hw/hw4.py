@@ -5,7 +5,7 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
-        return f'Product(title="{self.title}", price={self.price}, quantity={self.quantity})'
+        return f'Product (title = "{self.title}", price = {self.price}, quantity = {self.quantity})'
 
     def __repr__(self):
         return self.__str__()
