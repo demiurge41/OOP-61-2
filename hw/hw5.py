@@ -16,6 +16,7 @@ class User:
         return cls(username, cls.default_role)
 
 
+
     @staticmethod
     def is_admin(role):
         return role == "admin"

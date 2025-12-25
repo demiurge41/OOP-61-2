@@ -8,6 +8,7 @@ class User:
         self.username = username
         self.role = role
 
+
     @classmethod
     def create_from_name(cls, username):
         return cls(username, cls.default_role)
